@@ -2,22 +2,22 @@ const { User } = require('../models');
 const sequelize = require('../config/connection');
 const userData = [
   {
-    username: "ana",
+    username: "Mike",
     password: "12341234",
     email: "mail1@mail.com"
   },
   {
-    username: "conrad",
+    username: "Joey",
     password: "12341234",
     email: "mail2@mail.com"
   },
   {
-    username: "Gia",
+    username: "Fred",
     password: "12341234",
     email: "mail3@mail.com"
   },
   {
-    username: "Nikita",
+    username: "Seth",
     password: "12341234",
     email: "mail4@mail.com"
   },

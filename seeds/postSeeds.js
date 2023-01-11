@@ -2,27 +2,21 @@ const { Post } = require("../models");
 const sequelize = require('../config/connection');
 const postData = [
   {
-    title: "How to make a post",
+    title: "How to create a blog post",
     post_text:
-      "add a title and some text to the post and click on the submit button",
+      "Write a title and some text and click on the submit button. It's easy!",
     user_id: 1,
   },
   {
-    title: "How to make a comment",
-    post_text: "  add a comment and click on the submit button",
+    title: "How to post a comment",
+    post_text: "Click add a comment, type your comment, then click on the submit button.",
     user_id: 1,
   },
   {
-    title: "how to make a user",
+    title: "How to create a user",
     post_text:
-      "add a username and password and click on the submit button",
+      "Click on the signup button, create a username and password, then click on the submit button.",
     user_id: 4,
-  },
-  {
-    title: "add something of interest to you ...anything!!",
-    post_text:
-      " add a title and some text to the post and click on the submit button",
-    user_id: 5,
   },
 ];
 const seedGallery = () => Post.bulkCreate(postData);

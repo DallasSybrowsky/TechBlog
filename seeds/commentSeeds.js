@@ -2,17 +2,17 @@ const { Comment } = require('../models');
 const sequelize = require('../config/connection');
 const commentData = [
   {
-    comment_text: "i love to go to the beach ",
+    comment_text: "The new Apple iPhone 4 is great!",
     post_id: 3,
     user_id: 1
   },
   {
-    comment_text: "cant wait for summer ",
+    comment_text: "iOS 6 is the best!",
     post_id: 1,
     user_id: 4
   },
   {
-    comment_text: "i want to understand this assignment",
+    comment_text: "VSCode is the best code editor!",
     post_id: 4,
     user_id: 2
   },
