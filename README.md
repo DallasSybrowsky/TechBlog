@@ -10,8 +10,6 @@ This is a tech blog that uses express, sequelize, and node to run a tech blog wh
 
 - [Credits](#credits)
 - [Usage](#usage)
-- [Installation](#installation)
-- [Testing](#testing)
 - [Contribution](#contribution)
 - [License](#license)
 - [Questions](#questions)
@@ -25,22 +23,6 @@ This project is the original work of Dallas Sybrowsky. More of my work is availa
 ## Usage
 
 This file is deployed to heroku so all that is required is to navigate to the site by clicking (here)[https://dsybr-tech-blog.herokuapp.com/login].
-
-## Installation
-
-In order to install the package, please use the following command: 
-
-```
-npm i
-```
-
-## Testing
-
-In order to run tests, please utilize the following command: 
-
-```
-N/A
-```
 
 ## Contribution
 
