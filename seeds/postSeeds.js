@@ -10,13 +10,13 @@ const postData = [
   {
     title: "How to post a comment",
     post_text: "Click add a comment, type your comment, then click on the submit button.",
-    user_id: 1,
+    user_id: 2,
   },
   {
     title: "How to create a user",
     post_text:
       "Click on the signup button, create a username and password, then click on the submit button.",
-    user_id: 4,
+    user_id: 3,
   },
 ];
 const seedGallery = () => Post.bulkCreate(postData);

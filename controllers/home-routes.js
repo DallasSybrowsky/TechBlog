@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
         },
       ],
     });
+    console.log(postData);
 
     const posts = postData.map((post) =>
       post.get({
@@ -75,6 +76,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
     const user = userData.get({
       plain: true,
     });
+
+    // get posts 
 
     res.render("dashboard", {
       ...user,

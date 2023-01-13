@@ -23,10 +23,10 @@ document
   .addEventListener("submit", newFormHandler);
 
 // create a new post
-async function createPostHandler(event) {
-  event.preventDefault();
-  document.location.replace("/dashboard/new");
-}
-document
-  .querySelector("#create-new-post")
-  .addEventListener("click", createPostHandler);
+// async function createPostHandler(event) {
+//   event.preventDefault();
+//   document.location.replace("/dashboard/new");
+// }
+// document
+//   .querySelector("#create-new-post")
+//   .addEventListener("click", createPostHandler);
