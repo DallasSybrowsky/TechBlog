@@ -1,19 +1,41 @@
-<h1>Dashboard</h1>
-    <div class="mb-5 pt-3">
-        <a href="/dashboard/create/"><button id="create-post" class="button is-primary is-pulled-right">create post</button></a>
-        
-        <h2 class="title pb-4">dashboard: your posts</h2><hr>
-{{#if posts.length}}
+<div class="row">
+  <div class="col-auto">
+    <h2><span>~</span>Welcome, {{username}}!<span>~</span></h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Blog:</h3>
+
+    <form class="form new-blog-form">
+      <div class="form-group">
+        <input class="form-input" type="text" id="blog-title" name="blog-title" placeholder="Blog Title" />
+      </div>
+      
+      <div class="form-group">
+        <textarea class="form-input" id="blog-desc" name="blog-desc" placeholder="Blog Content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if blogs.length}}
+  <div class="col-md-6 blog-list">
+    <h3>Current Blogs:</h3>
+
+    {{#each blogs as |blog|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-danger" data-id="{{blog.id}}">DELETE</button>
+      </div>
     </div>
-
-    {{#each posts as |post|}}
-        {{> post-info post}}
-        
-            <a href="/dashboard/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">edit post</button></a>
-        </div>
     {{/each}}
-
-{{else}}
-<h6 class="pb-4 has-text-centered is-italic">you do not currently have any posts</h6>
-
-{{/if}}
+  </div>
+  {{/if}}
+</div>
