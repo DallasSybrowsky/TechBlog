@@ -77,8 +77,19 @@ router.get("/dashboard", withAuth, async (req, res) => {
       plain: true,
     });
 
-    // get posts 
-
+    // get all posts for dashboard
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+    
     res.render("dashboard", {
       ...user,
       logged_in: true,
