@@ -22,7 +22,7 @@ This project is the original work of Dallas Sybrowsky. More of my work is availa
 
 ## Usage
 
-This file is deployed to heroku so all that is required is to navigate to the site by clicking [here](https://dsybr-tech-blog.herokuapp.com/login).
+This file is deployed to heroku so all that is required is to navigate to the site by clicking [here](https://dsybr-tech-blog.herokuapp.com).
 
 ## Contribution
 
