@@ -77,6 +77,10 @@ router.get("/dashboard", withAuth, async (req, res) => {
       plain: true,
     });
 
+    const post = postData.get({
+      plain: true,
+    });
+    
     // get all posts for dashboard
     const postData = await Post.findAll({
       where: {
@@ -84,7 +88,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       },
       include: [
         {
-          model: User,
+          model: Post,
           attributes: ["username"],
         },
       ],
