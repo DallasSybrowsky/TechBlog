@@ -63,20 +63,21 @@ router.get("/post/:id", async (req, res) => {
 router.get("/dashboard", withAuth, async (req, res) => {
   console.log("dashboard 64");
   try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: {
-        exclude: ["password"],
-      },
-      include: [
-        {
-          model: Post,
-        },
-      ],
-    });
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: {
+    //     exclude: ["password"],
+    //   },
+    //   // include: [
+    //   //   {
+    //   //     model: Post,
+    //   //   },
+    //   // ],
+    // });
+    // console.log(userData);
 
-    const user = userData.get({
-      plain: true,
-    });
+    // const user = userData.get(
+    //   {plain: true,}
+    // );
 
     // get all posts for dashboard
     const postData = await Post.findAll({
@@ -85,19 +86,19 @@ router.get("/dashboard", withAuth, async (req, res) => {
       },
       include: [
         {
-          model: Post,
+          model: User,
           attributes: ["username"],
         },
       ],
     });
-
+    console.log("post data", postData);
     const post = postData.get({
       plain: true,
     });
-
+    console.log("post", post);
     res.render("dashboard", {
-      ...user,
-      logged_in: true,
+      postData,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
