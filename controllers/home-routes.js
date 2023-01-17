@@ -61,6 +61,7 @@ router.get("/post/:id", async (req, res) => {
 
 // Dashboard route
 router.get("/dashboard", withAuth, async (req, res) => {
+  console.log("dashboard 64");
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {
@@ -77,10 +78,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
       plain: true,
     });
 
-    const post = postData.get({
-      plain: true,
-    });
-    
     // get all posts for dashboard
     const postData = await Post.findAll({
       where: {
@@ -93,7 +90,11 @@ router.get("/dashboard", withAuth, async (req, res) => {
         },
       ],
     });
-    
+
+    const post = postData.get({
+      plain: true,
+    });
+
     res.render("dashboard", {
       ...user,
       logged_in: true,
