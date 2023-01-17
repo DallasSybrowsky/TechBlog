@@ -92,10 +92,10 @@ router.get("/dashboard", withAuth, async (req, res) => {
       ],
     });
     console.log("post data", postData);
-    const post = postData.get({
-      plain: true,
-    });
-    console.log("post", post);
+    // const post = postData.get({
+    //   plain: true,
+    // });
+    // console.log("post", post);
     res.render("dashboard", {
       postData,
       logged_in: req.session.logged_in,
