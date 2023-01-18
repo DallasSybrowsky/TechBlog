@@ -1,7 +1,8 @@
+console.log("connected");
 const newFormHandler = async (event) => {
   event.preventDefault();
-  const title = document.querySelector('input[name="post-title"]').value;
-  const post_text = document.querySelector('textarea[name="post-text"]').value;
+  const title = document.querySelector('input[name="blog-title"]').value;
+  const post_text = document.querySelector('textarea[name="blog-desc"]').value;
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
@@ -17,7 +18,7 @@ const newFormHandler = async (event) => {
   } else {
     alert(response.statusText);
   }
-}
+};
 document
   .querySelector(".new-post-form")
   .addEventListener("submit", newFormHandler);
